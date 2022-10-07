@@ -42,9 +42,9 @@ const Resumetemp2 = forwardRef((props, ref) => {
     useEffect(() => {
         const container = containerRef.current;
         if (!props.activeColor || !container) return;
-    
+
         container.style.setProperty("--color", props.activeColor);
-      }, [props.activeColor]);
+    }, [props.activeColor]);
 
     return (
         <div className="resume">
@@ -131,18 +131,18 @@ const Resumetemp2 = forwardRef((props, ref) => {
                                     {info.skills.points[1]}
                                 </div>
                                 <div className="skill_progress">
-                                    <span style={{ width: "70%" }}></span>
+                                    <span style={{ width: "74%" }}></span>
                                 </div>
-                                <div className="skill_per">70%</div>
+                                <div className="skill_per">74%</div>
                             </li>
                             <li>
                                 <div className="skill_name">
                                     {info.skills.points[2]}
                                 </div>
                                 <div className="skill_progress">
-                                    <span style={{ width: "90%" }}></span>
+                                    <span style={{ width: "68%" }}></span>
                                 </div>
-                                <div className="skill_per">90%</div>
+                                <div className="skill_per">68%</div>
                             </li>
                             <li>
                                 <div className="skill_name">
@@ -158,9 +158,9 @@ const Resumetemp2 = forwardRef((props, ref) => {
                                     {info.skills.points[4]}
                                 </div>
                                 <div className="skill_progress">
-                                    <span style={{ width: "88%" }}></span>
+                                    <span style={{ width: "55%" }}></span>
                                 </div>
-                                <div className="skill_per">88%</div>
+                                <div className="skill_per">55%</div>
                             </li>
                         </ul>
                     </div>
@@ -168,7 +168,7 @@ const Resumetemp2 = forwardRef((props, ref) => {
                         <div className="title">
                             <p className="bold">Projects</p>
                         </div>
-                        <div className="sectionTitle">{info.project.sectionTitle}</div>
+                        {/* <div className="sectionTitle">{info.project.sectionTitle}</div> */}
                         <div className="content">
                             {info.project?.details?.map((item) => (
                                 <div className="item">
@@ -223,54 +223,54 @@ const Resumetemp2 = forwardRef((props, ref) => {
                     </div>
                     <ul>
                         <li>
-                            <div className="date">{info.workExp.details.startDate && info.workExp.details.endDate ? (
-                                <div>
-                                    <Calendar /> {info.workExp.details.startDate} - 
-                                    {info.workExp.details.endDate}
-                                </div>
-                            ) : (
-                                <div />
-                            )}</div>
-
-                            <div className="info">
-                                <p className="semi-bold">{info.workExp.details.title ? (
-                                    <p >{info.workExp.details.title}</p>
-                                ) : (
-                                    <span />
-                                )}</p>
-                                <p>{info.workExp.details.link ? (
-                                    <a href={info.workExp.details.link}>
-                                        <Paperclip />
-                                        {info.workExp.details.link}
-                                    </a>
-                                ) : (
-                                    <span />
-                                )}
-                                    {info.workExp.details.github ? (
-                                        <a href={info.workExp.details.github}>
-                                            <GitHub />
-                                            {info.workExp.details.github}
+                            {info.workExp?.details?.map((item) => (
+                                <div  key={item.title}>
+                                    {item.title ? (
+                                        <p >{item.title}</p>
+                                    ) : (
+                                        <span />
+                                    )}
+                                    {item.companyName ? (
+                                        <p >{item.companyName}</p>
+                                    ) : (
+                                        <span />
+                                    )}
+                                    {item.certificationLink ? (
+                                        <a  href={item.certificationLink}>
+                                            <Paperclip />
+                                            {item.certificationLink}
                                         </a>
                                     ) : (
                                         <span />
                                     )}
-                                    {info.workExp.details.overview ? (
-                                        <p >{info.workExp.details.overview} </p>
+                                    {item.startDate && item.endDate ? (
+                                        <div >
+                                            <Calendar /> {getFormattedDate(item.startDate)}-
+                                            {getFormattedDate(item.endDate)}
+                                        </div>
+                                    ) : (
+                                        <div />
+                                    )}
+                                    {item.location ? (
+                                        <p >
+                                            <MapPin /> Remote
+                                        </p>
                                     ) : (
                                         <span />
                                     )}
-                                    {info.workExp.details.points?.length > 0 ? (
+                                    {item.points?.length > 0 ? (
                                         <ul >
-                                            {info.workExp.details.points?.map((elem, index) => (
-                                                <li key={elem + index}>
+                                            {item.points?.map((elem, index) => (
+                                                <li  key={elem + index}>
                                                     {elem}
                                                 </li>
                                             ))}
                                         </ul>
                                     ) : (
                                         <span />
-                                    )}</p>
-                            </div>
+                                    )}
+                                </div>
+                            ))}
                         </li>
 
                         {/* <li>
@@ -295,18 +295,28 @@ const Resumetemp2 = forwardRef((props, ref) => {
                     </div>
                     <ul>
                         <li>
-                            <div className="date">{info.education?.details.startDate && info.education?.details.endDate ? (
-                                <div>
-                                    <Calendar /> {getFormattedDate(info.education?.details.startDate)} -
-                                    {getFormattedDate(info.education?.details.endDate)}
-                                </div>
-                            ) : (
-                                ""
-                            )}</div>
-                            <div className="info">
-                                <p className="semi-bold">{info.education?.details.title}</p>
-                                <p>{info.education?.details.college}</p>
-                            </div>
+                        {info.education?.details?.map((item) => (
+            <div >
+              {item.title ? (
+                <p >{item.title}</p>
+              ) : (
+                <span />
+              )}
+              {item.college ? (
+                <p >{item.college}</p>
+              ) : (
+                <span />
+              )}
+              {item.startDate && item.endDate ? (
+                <div >
+                  <Calendar /> {getFormattedDate(item.startDate)} -
+                  {getFormattedDate(item.endDate)}
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+          ))}
                         </li>
                         {/* <li>
                             <div className="date">2000 - 2010</div>

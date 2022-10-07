@@ -309,8 +309,8 @@ function Editor(props) {
         />
         <InputControl
           placeholder="Skill 5"
-          value={values.points ? values.points[3] : ""}
-          onChange={(event) => handlePointUpdate(event.target.value, 3)}
+          value={values.points ? values.points[4] : ""}
+          onChange={(event) => handlePointUpdate(event.target.value, 4)}
         />
       </div>
     </div>

@@ -1,5 +1,6 @@
 import "./Home.css"
-// import Link from "react-router-dom"
+import React from "react"
+import {Link} from "react-router-dom"
 // import Body from "../../Components/Resume/Body/Body"
 
 
@@ -13,7 +14,10 @@ function Home() {
                     <p>So many career choices and so little time.
                         but with appname you can figure it out in nothing but a few minutes!
                     </p>
+                    <Link to="/CareerForm">
+
                     <button>Get started</button>
+                    </Link>
                 </div>
 
                 <div className="career">
@@ -22,7 +26,9 @@ function Home() {
                     <p>Create your resume now with our automated resume builder
                     </p>
 
+                    <Link to="/Body">
                     <button>Build now</button>
+                    </Link>
                 </div>
             </div>
 
