@@ -1,3 +1,12 @@
+.main{
+
+  background-image: url("../../../assets/Form.svg");
+  background-repeat: no-repeat;
+  min-width: 100vw;
+  height: auto;
+  background-size: cover;
+}
+
 .container {
   padding: 30px;
   display: flex;
@@ -5,7 +14,7 @@
   align-items: center;
   gap: 30px;
   padding-top: 0;
-}
+  }
 
 .heading {
   margin-top: 30px;
@@ -19,6 +28,7 @@
   gap: 40px;
   justify-content: space-between;
   align-items: center;
+  /* background-color: rgba(193, 131, 245, 0.45); */
 }
 
 .colors {
@@ -31,16 +41,16 @@
   height: 36px;
   width: 36px;
   border-radius: 50%;
-  background-color: #239ce2;
+  background-color: #c183f5;
 }
 .colors .active {
   border: 2px solid #000;
 }
 
-.toolbar button {
+/* .toolbar .tbutton {
   padding: 8px 16px;
   border-radius: 5px;
-  background-color: #239ce2;
+  background-color: #c183f5;
   color: #fff;
   outline: none;
   border: none;
@@ -51,12 +61,12 @@
   gap: 5px;
   align-items: center;
   cursor: pointer;
-}
+} */
 
-.toolbar button svg {
+/* .toolbar .tbutton svg {
   height: 20px;
   width: 20px;
-}
+} */
 
 .main {
   display: flex;

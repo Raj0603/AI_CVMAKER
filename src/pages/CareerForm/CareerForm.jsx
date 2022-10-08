@@ -1,10 +1,19 @@
 import "./CareerForm.css"
+import Navbar from "../../Components/Navbar/Navbar"
 
 function CareerForm() {
     return (
 
 
         <div className="form-main">
+
+            <Navbar/>
+
+            <div className="info">
+                <p className="form-info" style={{marginTop: "12vh"}}>Our AI will help you better understand your choices.</p>
+                <h2 className="form-heading">TAKE THE QUIZ NOW</h2>
+                <p className="form-info">answer the following questions as best as you can.</p>
+            </div>
             {/* <img src="../../assets/Form.svg" alt="" /> */}
             <div className="form-container">
                 <div className="form-row">

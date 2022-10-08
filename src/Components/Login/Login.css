@@ -9,7 +9,7 @@
     
     
    
-    input {
+    .login-input {
       font-family: "Poppins", sans-serif;
     }
     
@@ -41,7 +41,7 @@
       z-index: 5;
     }
     
-    form {
+    .login-form {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -53,12 +53,12 @@
       grid-row: 1 / 2;
     }
     
-    form.sign-up-form {
+    .login-form.sign-up-form {
       opacity: 0;
       z-index: 1;
     }
     
-    form.sign-in-form {
+    .login-form.sign-in-form {
       z-index: 2;
     }
     
@@ -90,7 +90,7 @@
       font-size: 1.1rem;
     }
     
-    .input-field input {
+    .input-field .login-input {
       background: none;
       outline: none;
       border: none;
@@ -100,7 +100,7 @@
       color: #333;
     }
     
-    .input-field input::placeholder {
+    .input-field .login-input::placeholder {
       color: #aaa;
       font-weight: 500;
     }
@@ -208,13 +208,13 @@
       transition-delay: 0.6s;
     }
     
-    .panel h3 {
+    .panel .login-h3 {
       font-weight: 600;
       line-height: 1;
       font-size: 1.5rem;
     }
     
-    .panel p {
+    .panel .login-p {
       font-size: 0.95rem;
       padding: 0.7rem 0;
     }
@@ -250,12 +250,12 @@
       left: 25%;
     }
     
-    .container.sign-up-mode form.sign-up-form {
+    .container.sign-up-mode .login-form.sign-up-form {
       opacity: 1;
       z-index: 2;
     }
     
-    .container.sign-up-mode form.sign-in-form {
+    .container.sign-up-mode .login-form.sign-in-form {
       opacity: 0;
       z-index: 1;
     }
@@ -323,11 +323,11 @@
         transition-delay: 0.8s;
       }
     
-      .panel h3 {
+      .panel .login-h3 {
         font-size: 1.2rem;
       }
     
-      .panel p {
+      .panel .login-p {
         font-size: 0.7rem;
         padding: 0.5rem 0;
       }
@@ -377,7 +377,7 @@
     }
     
     @media (max-width: 570px) {
-      form {
+      .login-form {
         padding: 0 1.5rem;
       }
     

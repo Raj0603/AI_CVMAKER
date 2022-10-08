@@ -104,7 +104,7 @@ function Login() {
             <div className="container">
                 <div className="forms-container">
                     <div className="signin-signup">
-                        <form action="#" className="sign-in-form" onSubmit={handleSubmit}>
+                        <form  action="#" className="sign-in-form login-form" onSubmit={handleSubmit}>
                             <h2 className="title">Sign in</h2>
                             <div className="input-field">
                                 <i className="fas fa-user"></i>
@@ -163,8 +163,8 @@ function Login() {
                 <div className="panels-container">
                     <div className="panel left-panel">
                         <div className="content">
-                            <h3>New here ?</h3>
-                            <p>
+                            <h3 className="login-h3">New here ?</h3>
+                            <p className="p">
                                 It's free , join now.
                             </p>
 
