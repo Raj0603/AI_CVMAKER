@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable default-case */
 import React, { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { X } from "react-feather";
 
 import InputControl from "../InputControl/InputControl";
@@ -662,9 +662,9 @@ function Editor(props) {
         <button onClick={handleSubmission}>Save</button>
         
       </div>
-      {/* <Link to="./template"> */}
+      <Link to="/Slider">
       <button className={styles.next}>Next</button>
-      {/* </Link> */}
+      </Link>
     </div>
   );
 }

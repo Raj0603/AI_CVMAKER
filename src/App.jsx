@@ -13,6 +13,7 @@ import Login from './Components/Login/Login';
 
 import { initialState, reducer } from '../src/reducer/UseReducer';
 import CareerForm from './pages/CareerForm/CareerForm';
+import Slider from './Components/Slider/Slider';
 
 export const UserContext = createContext();
 
@@ -31,6 +32,7 @@ const Routing = () => {
         <Route path='/Body' element={<Body />}></Route>
         <Route path='/CareerForm' element={<CareerForm />}></Route>
         <Route path='/Login' element={<Login />}></Route>
+        <Route path='/Slider' element={<Slider />}></Route>
         
         {/* <Route path='/Home' element={<Home />}></Route> */}
         
