@@ -30,10 +30,11 @@ function CareerForm() {
             console.log('Form submitted');
             let tensor = tf.tensor1d([RW[0], RW[1], CGPA, WD, DA, TP, NTP, GAC, MA, COM, SEC, BD, STAT, ENG, EVE, TB, MAR, ML, CON, LIVE])
 
+            console.log(tensor.toString())
 
 
 
-            const pred = await model.predict(tensor);
+            //const pred = await model.predict(tensor);
             //setPrediction(pred)
 
         }
