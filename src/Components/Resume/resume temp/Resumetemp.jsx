@@ -10,7 +10,7 @@ function Resumetemp() {
               <div className="pic"></div>
             </div>
             <div className="header-text">
-              <p>
+              <p className="rt-p">
                 <span className="first-name">Tim</span>
                 Daubenschütz
               </p>
@@ -104,10 +104,10 @@ function Resumetemp() {
             <div className="row">
               <div className="content-cat big-text">
                 Self-employed
-                <p>2012-05-01 till today</p>
+                <p className="cc-p">2012-05-01 till today</p>
               </div>
               <div className="content-text work-listing">
-                <p>Hondrt.de is a small business enterprise (dt. Kleingewerbe) specializing in serving technical needs of local customers. For example building corporate homepages, technical consulting and programming.</p>
+                <p className="cc-p">Hondrt.de is a small business enterprise (dt. Kleingewerbe) specializing in serving technical needs of local customers. For example building corporate homepages, technical consulting and programming.</p>
                 <p className="highlight">Implemented and marketed Timedoublr.com, a flexible time tracking app for Apple iOS</p>
                 <p className="highlight">Consulted a medium-sized business in establishing their media presence</p>
               </div>
@@ -117,10 +117,10 @@ function Resumetemp() {
             <div className="row">
               <div className="content-cat big-text">
                 Ulm University
-                <p>2013-09-01 till today</p>
+                <p className="cc-p">2013-09-01 till today</p>
               </div>
               <div className="content-text work-listing">
-                <p>Development of Module Management System (MMS), a content management system for studycourse module handbooks introduced as part of the Bologna Process. Feature requirements included: versioning of every resource, a complex editorial process, visual representation of high level data structures (e.g. trees) and a flexible, RESTful API.</p>
+                <p className="cc-p">Development of Module Management System (MMS), a content management system for studycourse module handbooks introduced as part of the Bologna Process. Feature requirements included: versioning of every resource, a complex editorial process, visual representation of high level data structures (e.g. trees) and a flexible, RESTful API.</p>
                 <p className="highlight">Won the Software Construction (dt. Softwaregrundprojekt) className challenge for best usability and got employed by university</p>
               </div>
             </div>
@@ -130,7 +130,7 @@ function Resumetemp() {
             <div className="row">
               <div className="content-cat">
                 Education
-                <p>2011-10-01 till</p>
+                <p className="cc-p">2011-10-01 till</p>
                 <p style={{ marginTop: "0.25em" }}>2015-02-14</p>
               </div>
               <div className="content-text work-listing education-listing">
@@ -144,7 +144,7 @@ function Resumetemp() {
             <div className="row">
               <div className="content-cat big-text">
                 Awards
-                <p>Best Usability</p>
+                <p className="cc-p">Best Usability</p>
                 <p style={{ marginTop: "0.25em" }}>2013-07-13</p>
               </div>
               <div className="content-text work-listing education-listing">

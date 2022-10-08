@@ -67,7 +67,7 @@
     margin-left:1em;
   }
   
-  .rtheader p {
+  .rtheader .rt-p {
     text-align:center;
     font-family: "Merriweather";
     
@@ -149,7 +149,7 @@
     width:36.66%;
   }
   
-  .content-cat p {
+  .content-cat .cc-p {
     font-size:0.55em;
     font-weight:600;
     
@@ -210,7 +210,7 @@
     color:#4fc3f7;
   }
   
-  .work-listing p {
+  .work-listing .cc-p{
     font-family: "Open Sans";
     font-size:0.7em;
     font-weight:400;

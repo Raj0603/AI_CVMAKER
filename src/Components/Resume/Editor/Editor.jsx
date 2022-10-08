@@ -633,7 +633,7 @@ function Editor(props) {
                   key={item.title + index}
                   onClick={() => setActiveDetailIndex(index)}
                 >
-                  <p>
+                  <p className={styles.editorp}>
                     {sections[activeSectionKey]} {index + 1}
                   </p>
                   <X
@@ -659,11 +659,11 @@ function Editor(props) {
 
         {generateBody()}
 
-        <button onClick={handleSubmission}>Save</button>
+        <button className={styles.button} onClick={handleSubmission}>Save</button>
         
       </div>
-      <Link to="/Slider">
-      <button className={styles.next}>Next</button>
+      <Link to="/Slider" style={{textDecoration:"none"}}>
+      <button className={`${styles.next} ${styles.button}`}  >Next</button>
       </Link>
     </div>
   );

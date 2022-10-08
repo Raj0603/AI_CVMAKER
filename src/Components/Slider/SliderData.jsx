@@ -7,7 +7,9 @@ export const images = [
   {
     img: c2,
   },
+  
   {
     img: c3,
   },
+  
 ];

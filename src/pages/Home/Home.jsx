@@ -30,7 +30,7 @@ function Home() {
                     <p className="home-info">Create your resume now with our automated resume builder
                     </p>
 
-                    <Link to="/Body">
+                    <Link to="/Slider">
                     <button className="home-button">Build now</button>
                     </Link>
                 </div>
@@ -38,7 +38,7 @@ function Home() {
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 <br /><br /><br />
                 <div className="home-footer">
-                    {/* <p>Contact US</p> */}
+                    <p>Contact US</p>
                 </div>
             </div>
 

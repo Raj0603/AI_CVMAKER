@@ -7,6 +7,7 @@
   flex-direction: column;
   /* gap: 30px; */
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgba(193, 131, 245, 0.45);
   padding-top: 5px;
   height: fit-content;
   margin: 0 auto;
@@ -38,8 +39,8 @@
 }
 
 .header .active {
-  border-bottom: 2px solid #239ce2;
-  color: #239ce2;
+  border-bottom: 2px solid #c183f5;
+  color: #c183f5;
 }
 
 .body {
@@ -78,7 +79,7 @@
 }
 
 .chips .new {
-  color: #239ce2;
+  color: #c183f5;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
@@ -94,7 +95,7 @@
   cursor: default;
 }
 
-.chip p {
+.chip .editorp {
   font-weight: 500;
   line-height: 1.25rem;
   color: #fff;
@@ -107,15 +108,15 @@
 }
 
 .chips .active {
-  background-color: #239ce2;
+  background-color: #c183f5;
 }
 
-.body button {
+.body .button {
   /* display:"inline"; */
   width: fit-content;
   padding: 8px 16px;
   border-radius: 5px;
-  background-color: #239ce2;
+  background-color: #c183f5;
   color: #fff;
   outline: none;
   border: none;
@@ -129,7 +130,7 @@
   transition: 200ms;
 }
 
-.body button:active {
+.body .button:active {
   transform: translateY(2px);
 }
 
@@ -137,7 +138,7 @@
   width: fit-content;
   padding: 8px 16px;
   border-radius: 5px;
-  background-color: #239ce2;
+  background-color: #c183f5;
   color: #fff;
   outline: none;
   border: none;

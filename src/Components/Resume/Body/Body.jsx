@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 
 import Editor from "../Editor/Editor";
 import Resumetemp2 from "../Resume temp 2/Resumetemp2";
+import Navbar from "../../Navbar/Navbar";
 
 import styles from "./Body.module.css";
 
@@ -56,6 +57,10 @@ function Body() {
   });
 
   return (
+
+    <div className={styles.main}>
+
+      <Navbar/>
     <div className={styles.container}>
       <p className={styles.heading}>Resume Builder</p>
       <div className={styles.toolbar}>
@@ -73,6 +78,7 @@ function Body() {
           information={resumeInformation}
         />
       </div>
+    </div>
     </div>
   );
 }

@@ -9,6 +9,22 @@
     /* align-items: center; */
 }
 
+.form-info{
+    font-size: large;
+    font-family: 'Quicksand', sans-serif;
+    /* margin: auto; */
+    margin-left: 30px;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    padding: 10px;
+}
+
+.form-heading{
+    margin-left: 30px;
+    font-size: 3rem;
+    padding: 10px;
+}
+
 .form-container{
     display: flex;
     flex-wrap: wrap;
@@ -17,7 +33,7 @@
     width: 50vw;
     text-align: center;
     margin: auto;
-    margin-top: 30vh;
+    margin-top: 15vh;
     background-color: rgba(193, 131, 245, 0.45);
     box-shadow:
       0 1px 1px hsl(0deg 0% 0% / 0.075),

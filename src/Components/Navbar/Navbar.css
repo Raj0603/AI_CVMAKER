@@ -18,6 +18,13 @@
 
 }
 
+.logo{
+    height: 10vmax;;
+    width: 10vmax;
+    margin-left: 5vw;
+    /* border-radius: 50%; */
+}
+
 .home-login:active, .home-signup:active{
     transform: translateY(1px);
 }
@@ -34,7 +41,7 @@
 
 .home-navbar{
     text-align: center;
-    margin-top: 20vh;
+    margin-top: 5vh;
 }
 
 .home-nav-ele{
