@@ -14,6 +14,7 @@ connection();
 // middlewares
 app.use(express.json());
 app.use(cors());
+app.use(express.static('../static'))
 
 // app.use('/Login', (req, res) => {
 //     res.send({
