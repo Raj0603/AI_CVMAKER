@@ -7,7 +7,7 @@ import { faGithub, faGoogle, faLinkedinIn, } from "@fortawesome/free-brands-svg-
 import { GoogleLogin } from "react-google-login"
 import React, { useContext, useState } from "react"
 import Signup from "../SignUp/Signup"
-import { useNavigate } from "react-router-dom"
+import {BrowserRouter, useLocation, useNavigate,Navigate } from "react-router-dom"
 import axios from "axios"
 import { useRef } from "react"
 
@@ -20,6 +20,8 @@ import { UserContext } from "../../App"
 const clientId = "416173177198-s29fioc3j8kia1fviqh1j1bbfbldghun.apps.googleusercontent.com"
 
 function Login() {
+
+
 
 
     setTimeout(ST, 10)
@@ -45,7 +47,12 @@ function Login() {
     const onFailure = (res) => {
         console.log("Login Failed! res: ", res)
     }
+    
 
+
+
+  
+    
 
 
     // login flow 
@@ -66,7 +73,50 @@ function Login() {
             const url = "http://localhost:4000/hacky/auth";
             const { data: res } = await axios.post(url, data);
             localStorage.setItem("token", res.data);
-            navigate("/");
+           
+            navigate("/", 
+           
+            (function (global) {
+
+                if(typeof (global) === "undefined") {
+                    throw new Error("window is undefined");
+                }
+            
+                var _hash = "!";
+                var noBackPlease = function () {
+                    global.location.href += "#";
+            
+                    // Making sure we have the fruit available for juice (^__^)
+                    global.setTimeout(function () {
+                        global.location.href += "!";
+                    }, 50);
+                };
+            
+                global.onhashchange = function () {
+                    if (global.location.hash !== _hash) {
+                        global.location.hash = _hash;
+                    }
+                };
+            
+                global.onload = function () {
+                    noBackPlease();
+            
+                    // Disables backspace on page except on input fields and textarea..
+                    document.body.onkeydown = function (e) {
+                        var elm = e.target.nodeName.toLowerCase();
+                        if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                            e.preventDefault();
+                        }
+                        // Stopping the event bubbling up the DOM tree...
+                        e.stopPropagation();
+                    };
+                }
+            })(window),
+                
+            { replace: false });
+
+          
+
             dispatch({type:'USER',payload:true})
             alert(res.message);
           

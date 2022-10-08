@@ -7,8 +7,9 @@ import { faGithub, faGoogle, faLinkedinIn, } from "@fortawesome/free-brands-svg-
 import {GoogleLogin} from "react-google-login"
 import React, {useState} from "react"
 import Login from "../Login/Login";
-import {useNavigate} from "react-router-dom"
+import {BrowserRouter ,useNavigate,useLocation, Navigate} from "react-router-dom"
 import axios from "axios";
+
 
 
 const clientId = "416173177198-s29fioc3j8kia1fviqh1j1bbfbldghun.apps.googleusercontent.com"
@@ -41,6 +42,7 @@ function Signup() {
     }
   
     const navigate = useNavigate();
+
 
 
     // Newly Signup Flow

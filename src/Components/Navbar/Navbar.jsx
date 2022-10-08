@@ -2,11 +2,17 @@ import "./Navbar.css"
 import {Link} from "react-router-dom"
 import { UserContext } from "../../App"
 import React, { useContext, useRef, useState } from "react";
+import axios from "axios";
+import {BrowserRouter ,useNavigate,useLocation, Navigate} from "react-router-dom"
 
 function Navbar() {
   
 
 const { state, dispatch } = useContext(UserContext);   
+
+
+const navigate = useNavigate();
+
 
 const handleLogout = () => {
     localStorage.removeItem("token");
@@ -14,10 +20,16 @@ const handleLogout = () => {
     setAuthenticationToken(false);
     setIsLoggedin(false);
    // dispatch(Login=false);
+ 
+    navigate("/", { replace: false });
+    // window.location ="/";
 
-
-    window.location ="/";
-
+      if ((navigate="Login",replace= true)) {
+              const  element = document.getElementById("seo")
+              element.addEventListener("click",()=>{
+                window.alert("No");
+              })
+            }
 
 };
 
@@ -25,19 +37,23 @@ const handleLogout = () => {
     if(state) {
         return(
            
-            <><div className="login-signup">
+            <><div id="seo">
+            <div className="login-signup">
                 <Link to="" onClick={handleLogout}>
                     <button className="home-signup">LogOut</button>
                 </Link>
+
+
              
             </div>
             
             <div className="home-navbar">
+                    
                     <Link to="/">
-
                         <a href="" className="home-nav-ele">HOME</a>
                     </Link>
-                    <Link to="/CareerForm">
+
+                    <Link to="/CareerForm" id="vv">
                         <a href="" className="home-nav-ele">career guide</a>
                     </Link>
                     <Link to="/Body">
@@ -46,6 +62,7 @@ const handleLogout = () => {
                     <Link to="/">
                         <a href="" className="home-nav-ele" style={{ borderRight: "none" }}>FAQ</a>
                     </Link>
+                </div>
                 </div></>
         )
     }
@@ -53,10 +70,11 @@ const handleLogout = () => {
     else {
         return(
             <><div className="login-signup">
-                <Link to="/Signup">
+                
+                <Link to={{ pathname: "/Signup", state: { fromApp: true } }}>
                     <button className="home-signup">Signup</button>
                 </Link>
-                <Link to="/Login">
+                <Link to={{ pathname: "/Login", state: { fromApp: true } }}>
                     <button className="home-login">Login</button>
                 </Link>
             </div>
