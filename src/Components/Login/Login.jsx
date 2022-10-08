@@ -51,6 +51,7 @@ function Login() {
     // login flow 
 
     //const {state,dispatch} = useContext(UserContext);
+    const {state,dispatch} = useContext(UserContext);
     const navigate = useNavigate();
     const [data, setData] = useState({ userName: "", password: "" });
     const [error, setError] = useState("");
