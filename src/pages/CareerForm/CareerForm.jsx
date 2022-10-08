@@ -15,7 +15,7 @@ function CareerForm() {
     //load model
 
     const loadModel = async () => {
-        //const loadedModel = await tf.loadLayersModel('../../../static/tfjs/ann/model.json');
+       
         const loadedModel = await tf.loadLayersModel('../../../static/tfjs/ann/model.json');
         setModel(loadedModel);
         console.log('model loaded');
@@ -34,8 +34,8 @@ function CareerForm() {
 
 
 
-            //const pred = await model.predict(tensor);
-            //setPrediction(pred)
+            const pred = await model.predict(tensor);
+            setPrediction(pred)
 
         }
     }
