@@ -39,6 +39,7 @@ function CareerForm() {
         if(res.data!=null){
 
             setPrediction(res.data)
+            console.log(prediction)
         }
        })           
     },[]);
@@ -65,7 +66,6 @@ function CareerForm() {
     }
 
     return (
-
 
         <form onSubmit={handleSubmit} className="form-main" method="POSt">
 
@@ -247,7 +247,7 @@ function CareerForm() {
                     </div>
                 </div>
                 <div className="prediction">
-                    
+                    <p>{}</p>
                 </div>
 
             </div>

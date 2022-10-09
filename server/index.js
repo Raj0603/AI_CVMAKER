@@ -24,7 +24,7 @@ app.use(cors());
 //     });
 //   });
 let dat = null
-let role
+let role = null
 
 //getting data from career form
 app.post("/post_tensor", cors(), async (req, res) => {
@@ -34,11 +34,11 @@ app.post("/post_tensor", cors(), async (req, res) => {
 
     //call ai model
     if(dat != null){
-        const childPython = spawn('python',['../keras_ai_model/careerann.py',dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],
+        const childPython = spawn('python',['../keras_ai_model/ann.py',dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],
         dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0]]);
     
         childPython.stdout.on('data',(data)=>{
-            role = data;
+            role = {data};
              console.log(`${data}`);
         })
         
@@ -60,7 +60,7 @@ app.post("/post_tensor", cors(), async (req, res) => {
 
 //send final prediction
 app.get("/CareerForm", cors(), (req, res) => {
-    res.send(dat);
+    res.send(role);
 })
 
 
