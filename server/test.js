@@ -1,6 +1,6 @@
 const { spawn } = require('child_process'); 
 
-const childPython = spawn('python',['careerann.py']);
+const childPython = spawn('python',['../keras_ai_model/careerann.py',1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
 
 childPython.stdout.on('data',(data)=>{
     console.log(`${data}`);

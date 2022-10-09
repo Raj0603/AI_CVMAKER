@@ -3,8 +3,6 @@ import Navbar from "../../Components/Navbar/Navbar"
 import * as tf from '@tensorflow/tfjs';
 import { useRef, useState, useEffect } from 'react'
 
-
-
 function CareerForm() {
 
     //hooks
@@ -14,19 +12,19 @@ function CareerForm() {
 
     //load model
 
-    const loadModel = async () => {
+    // const loadModel = async () => {
        
-        const loadedModel = await tf.loadLayersModel('../../../static/tfjs/ann/model.json');
-        setModel(loadedModel);
-        console.log('model loaded');
-    }
+    //     const loadedModel = await tf.loadLayersModel('../../../static/tfjs/ann/model.json');
+    //     setModel(loadedModel);
+    //     console.log('model loaded');
+    // }
 
-    useEffect(() => { loadModel() }, [])
+    // useEffect(() => { loadModel() }, [])
 
 
     //questions
     const givePredictions = async (e) => {
-        if (model != null) {
+       // if (model != null) {
             console.log('Form submitted');
             let tensor = tf.tensor1d([RW[0], RW[1], CGPA, WD, DA, TP, NTP, GAC, MA, COM, SEC, BD, STAT, ENG, EVE, TB, MAR, ML, CON, LIVE])
 
@@ -34,10 +32,10 @@ function CareerForm() {
 
 
 
-            const pred = await model.predict(tensor);
-            setPrediction(pred)
+            // const pred = await model.predict(tensor);
+            // setPrediction(pred)
 
-        }
+        //}
     }
 
 
@@ -69,7 +67,7 @@ function CareerForm() {
     return (
 
 
-        <form onSubmit={handleSubmit} className="form-main">
+        <form onSubmit={handleSubmit} className="form-main" method="POSt">
 
             <Navbar />
 

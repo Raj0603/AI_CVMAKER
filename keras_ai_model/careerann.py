@@ -12,13 +12,14 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 import os.path as op
+import sys 
 
 
 
-# ---Data Preprocessing------
+#---Data Preprocessing------
 
 # Importing the dataset
-dataset = pd.read_csv('data.csv')
+dataset = pd.read_csv('../keras_ai_model/data.csv')
 
 #independent variable matrix upperbound exclusive hota hai!!
 X = dataset.iloc[:, 0:19].values #pd illoc
@@ -194,11 +195,16 @@ y_pred = (y_pred >0.5)
 from sklearn.metrics import multilabel_confusion_matrix
 cm = multilabel_confusion_matrix(y_test,y_pred)
 
+in_dat = np.asarray([sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7],sys.argv[8],sys.argv[9],sys.argv[10],sys.argv[11],
+                sys.argv[12],sys.argv[13],sys.argv[14],sys.argv[15],sys.argv[16],sys.argv[17],sys.argv[18],sys.argv[19],sys.argv[20]])
+tf.constant(in_dat)
+print(in_dat)
 
-single_pred = ann.predict(sc.transform([['1', '0', '1', '1', '0', '0', '1', '1', '1', '1', '0', '1', '1', '1', '0', '1', '0', '1', '1', '1']]))
+single_pred = ann.predict(sc.transform([in_dat]))
 
 single_pred = (single_pred > 0.2)
 
+print(single_pred)
 
 #saving our model
 if op.isfile('C:/Users/Duks/Desktop/tfjs/models/career1.h5') is False:
