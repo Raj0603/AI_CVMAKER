@@ -2,42 +2,12 @@ import "./CareerForm.css"
 import Navbar from "../../Components/Navbar/Navbar"
 import * as tf from '@tensorflow/tfjs';
 import { useRef, useState, useEffect } from 'react'
+import axios from "axios";
 
 function CareerForm() {
 
-    //hooks
-
-    const [model, setModel] = useState(null);
+    
     const [prediction, setPrediction] = useState();
-
-    //load model
-
-    // const loadModel = async () => {
-       
-    //     const loadedModel = await tf.loadLayersModel('../../../static/tfjs/ann/model.json');
-    //     setModel(loadedModel);
-    //     console.log('model loaded');
-    // }
-
-    // useEffect(() => { loadModel() }, [])
-
-
-    //questions
-    const givePredictions = async (e) => {
-       // if (model != null) {
-            console.log('Form submitted');
-            let tensor = tf.tensor1d([RW[0], RW[1], CGPA, WD, DA, TP, NTP, GAC, MA, COM, SEC, BD, STAT, ENG, EVE, TB, MAR, ML, CON, LIVE])
-
-            console.log(tensor.toString())
-
-
-
-            // const pred = await model.predict(tensor);
-            // setPrediction(pred)
-
-        //}
-    }
-
 
     const [RW, setRW] = useState();
     const [CGPA, setCGPA] = useState();
@@ -59,9 +29,39 @@ function CareerForm() {
     const [CON, setCON] = useState();
     const [LIVE, setLIVE] = useState();
 
-    const handleSubmit = (e) => {
+    
+
+
+    //get prediction
+    useEffect(() => {
+       
+       axios.get("http://localhost:4000/CareerForm").then((res)=>{
+        if(res.data!=null){
+
+            setPrediction(res.data)
+        }
+       })           
+    },[]);
+
+
+
+   
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        givePredictions();
+        console.log('Form submitted');
+            let tensor = ([RW[0], RW[1], CGPA, WD, DA, TP, NTP, GAC, MA, COM, SEC, BD, STAT, ENG, EVE, TB, MAR, ML, CON, LIVE])
+            tensor = tensor.toString()
+            console.log(tensor)
+
+            try {
+                await axios.post("http://localhost:4000/post_tensor",{
+                    tensor
+                })
+            } catch (error) {
+                console.log(error)
+            }
+            
     }
 
     return (
@@ -245,6 +245,9 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no17" name="live_project" value="0" />
                         <label style={{ marginLeft: "8px" }} for="no17">NO</label>
                     </div>
+                </div>
+                <div className="prediction">
+                    
                 </div>
 
             </div>

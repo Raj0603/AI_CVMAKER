@@ -204,7 +204,6 @@ single_pred = ann.predict(sc.transform([in_dat]))
 
 single_pred = (single_pred > 0.2)
 
-print(single_pred)
 
 #saving our model
 if op.isfile('C:/Users/Duks/Desktop/tfjs/models/career1.h5') is False:
