@@ -203,64 +203,7 @@ single_pred = ann.predict(sc.transform([in_dat]))
 
 single_pred = (single_pred > 0.2)
 
+print(single_pred)
 
-#saving our model
-if op.isfile('C:/Users/Duks/Desktop/tfjs/models/career1.h5') is False:
-    ann.save('C:/Users/Duks/Desktop/tfjs/models/career1.h5')
-
-"""
-#k-fold cross val
-
-from keras.wrappers.scikit_learn import KerasClassifier
-from sklearn.model_selection import cross_val_score
-def build_ann():
-    ann = tf.keras.models.Sequential()
-    ann.add(tf.keras.layers.Dense(units=15, activation='relu'))
-    ann.add(tf.keras.layers.Dense(units=15, activation='relu'))
-    ann.add(tf.keras.layers.Dense(units=9, activation='softmax'))
-    ann.compile(optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics = ['accuracy'])
-    return ann
-
-ann = KerasClassifier(build_fn=build_ann,batch_size = 10, epochs = 100)
-accuracies = cross_val_score(estimator=ann,X = X_train,y = y_train, cv = 10 , n_jobs = -1)
-
-mean = accuracies.mean()
-variance = accuracies.std()
-
-
-
-#parameterized tuning using gridsearch
-
-from keras.wrappers.scikit_learn import KerasClassifier
-from sklearn.model_selection import GridSearchCV
-def build_ann(optimizer):
-    ann = tf.keras.models.Sequential()
-    ann.add(tf.keras.layers.Dense(units=15, activation='relu'))
-    ann.add(tf.keras.layers.Dense(units=15, activation='relu'))
-    ann.add(tf.keras.layers.Dense(units=9, activation='softmax'))
-    ann.compile(optimizer = optimizer, loss = 'categorical_crossentropy', metrics = ['accuracy'])
-    return ann
-
-ann = KerasClassifier(build_fn=build_ann)
-parameters = {'batch_size' : [25,32],
-              'epochs': [100,500],
-              'optimizer':['adam','rmsprop']}
-
-grid_search = GridSearchCV(estimator=ann,
-                           param_grid = parameters,
-                           scoring='accuracy',
-                           cv = 10)
-
-
-
-#fitting our ann to our training set
-grid_search = grid_search.fit(X_train,y_train)
-
-
-best_parameters=grid_search.best_params_
-best_accuracy=grid_search.best_score_
-
-
-"""
     
     
