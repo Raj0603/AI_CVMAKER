@@ -31,7 +31,8 @@ router.post("/", async (req, res) => {
 		await new User({ ...req.body, password: hashPassword }).save();
 		res.status(201).send({ message:"joined up successfully You will be directed to the login page, Press OK" });
 	} catch (error) {
-		res.status(500).send({ message: "I did'nt like it , try again" });
+		console.log(error);
+		res.status(500).send({ message: "Error, Try again" });
 	}
 });
 

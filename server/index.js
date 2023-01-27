@@ -6,7 +6,7 @@ const connection = require("./database");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const { spawn } = require('child_process');
-
+const getAIMLResult = require("./test")
 //const { tensor } = require("@tensorflow/tfjs");
 
 
