@@ -1,55 +1,58 @@
-
-.home-login, .home-signup{
-    width: 7rem;
-    height: 2rem;
-    border-radius: 2rem;
-    margin-top:3rem;
-    float: right;
-    margin-right: 2rem;
-    border: 1px solid ;
-    box-shadow:
-      0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075),
-      0 4px 4px hsl(0deg 0% 0% / 0.075),
-      0 8px 8px hsl(0deg 0% 0% / 0.075),
-      0 16px 16px hsl(0deg 0% 0% / 0.075)
-    ;
-    cursor: pointer;
-
+/* .navbar, */
+.navbar * {
+    /* border: 2px solid red; */
 }
 
-.logo{
-    height: 10vmax;;
-    width: 10vmax;
-    margin-left: 5vw;
-    /* border-radius: 50%; */
+.navbar {
+    z-index: 10000000;
+    background-color: #feffbfe3;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 64px;
 }
 
-.home-login:active, .home-signup:active{
-    transform: translateY(1px);
+.navbar-logo,
+.navbar-logo a {
+    height: 100%;
 }
 
-.home-login{
-    margin-right: 1rem;
-    color: darkslategray;
+.logo {
+    height: 100%;
 }
 
-.home-signup{
-    background-color: darkslategray;
-    color: #ececec;
+.navbar-links-container {
+    margin: 0 0 0 auto;
+    height: 100%;
+    /* border: 2px solid red; */
 }
 
-.home-navbar{
-    text-align: center;
-    margin-top: 5vh;
+.navbar-links {
+    margin: 0 3px;
+    /* height: 90%; */
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+    border: 2px solid transparent;
 }
 
-.home-nav-ele{
-    border-right: 2px solid darkslategray;
-    font-size: 1rem;
-    letter-spacing: 3px;
-    margin: 3px;
-    padding: 3px;
-    text-decoration: none;
-    color: darkslategray;;
+.navbar-links:hover,
+.navbar-links.active {
+    /* font-weight: 500; */
+    /* border: 2px solid red; */
+    /* color: red; */
+}
+
+.navbar-links:hover {
+    border: 2px solid var(--medium-purple);
+    background-color: none;
+    /* color: black; */
+}
+
+.navbar-links.active {
+    color: var(--pale-yellow);
+    background-color: var(--medium-purple);
+
 }
