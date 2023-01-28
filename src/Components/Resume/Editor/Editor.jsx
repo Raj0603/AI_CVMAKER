@@ -604,70 +604,72 @@ function Editor(props) {
   }, [activeDetailIndex]);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        {Object.keys(sections)?.map((key) => (
-          <div
-            className={`${styles.section} ${activeSectionKey === key ? styles.active : ""
-              }`}
-            key={key}
-            onClick={() => setActiveSectionKey(key)}
-          >
-            {sections[key]}
-          </div>
-        ))}
-      </div>
-
-      <div className={styles.body}>
-        <InputControl
-          label="Title"
-          placeholder="Enter section title"
-          value={sectionTitle}
-          onChange={(event) => setSectionTitle(event.target.value)}
-        />
-
-        <div className={styles.chips}>
-          {activeInformation?.details
-            ? activeInformation?.details?.map((item, index) => (
-              <div
-                className={`${styles.chip} ${activeDetailIndex === index ? styles.active : ""
-                  }`}
-                key={item.title + index}
-                onClick={() => setActiveDetailIndex(index)}
-              >
-                <p className={styles.editorp}>
-                  {sections[activeSectionKey]} {index + 1}
-                </p>
-                <X
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    handleDeleteDetail(index);
-                  }}
-                />
-              </div>
-
-
-            ))
-            : ""}
-          {activeInformation?.details &&
-            activeInformation?.details?.length > 0 ? (
-            <div className={styles.new} onClick={handleAddNew}>
-              +New
+    <>
+      <div className={[styles.container,styles.centerContainer].join(" ")}>
+        <div className={styles.header}>
+          {Object.keys(sections)?.map((key) => (
+            <div
+              className={`${styles.section} ${activeSectionKey === key ? styles.active : ""
+                }`}
+              key={key}
+              onClick={() => setActiveSectionKey(key)}
+            >
+              {sections[key]}
             </div>
-          ) : (
-            ""
-          )}
+          ))}
         </div>
 
-        {generateBody()}
-        <div className="buttonContainer flex">
+        <div className={styles.body}>
+          <InputControl
+            label="Title"
+            placeholder="Enter section title"
+            value={sectionTitle}
+            onChange={(event) => setSectionTitle(event.target.value)}
+          />
 
-          <button className={styles.button} onClick={handleSubmission}>Save</button>
+          <div className={styles.chips}>
+            {activeInformation?.details
+              ? activeInformation?.details?.map((item, index) => (
+                <div
+                  className={`${styles.chip} ${activeDetailIndex === index ? styles.active : ""
+                    }`}
+                  key={item.title + index}
+                  onClick={() => setActiveDetailIndex(index)}
+                >
+                  <p className={styles.editorp}>
+                    {sections[activeSectionKey]} {index + 1}
+                  </p>
+                  <X
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      handleDeleteDetail(index);
+                    }}
+                  />
+                </div>
 
-          
+
+              ))
+              : ""}
+            {activeInformation?.details &&
+              activeInformation?.details?.length > 0 ? (
+              <div className={styles.new} onClick={handleAddNew}>
+                +New
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+
+          {generateBody()}
+          <div className="buttonContainer flex">
+
+            <button className={styles.button} onClick={handleSubmission}>Save</button>
+
+            
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

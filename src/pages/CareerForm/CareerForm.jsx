@@ -7,7 +7,7 @@ import axios from "axios";
 function CareerForm() {
 
 
-    const [prediction, setPrediction] = useState("Role");
+    const [prediction, setPrediction] = useState("");
 
     const [RW, setRW] = useState();
     const [CGPA, setCGPA] = useState();
@@ -66,10 +66,8 @@ function CareerForm() {
                     setPrediction("")
                     for (const roles of roleArr) {
                         yourRole += roles + " ";
-                        console.log(roles);
                     }
                     setPrediction(yourRole)
-                    console.log(yourRole);
                 }
             })
         } catch (error) {

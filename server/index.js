@@ -31,14 +31,16 @@ let role = null
 app.post("/post_tensor", cors(), async (req, res) => {
     let { tensor } = req.body;
 
-    let result;let roles = new Array(); let noOfRoles = 0
+    let result = null;
+    var rolesArr = []; 
+    let noOfRoles = 0
 
     let tensorString = tensor;
     const dat = tensorString.split(",");
     // console.log("Data:",dat,"=",dat[0],dat[2],dat[3])
 
     //call ai model
-roleSequencedArray = ["Computer Analyst","Content Writer", "Data Analysis","Data Engineer", "Developer" ,"ML Engineer","Management",
+roleSequencedArray = ["Computer Analyst","Developer", "Data Analysis","Data Engineer", "Content Writer" ,"ML Engineer","Management",
 "Marketing","Network Engineer","Security"]
 if(dat != null){
         const childPython = spawn('python',['../keras_ai_model/ann.py', dat]);
@@ -52,18 +54,19 @@ if(dat != null){
                     console.log(result[boolValueIndex]);
                     if(result[boolValueIndex] == "True"){
                         console.log(roleSequencedArray[boolValueIndex]);
-                        roles[noOfRoles] = roleSequencedArray[boolValueIndex]
+                        // rolesArr += " | "+ roleSequencedArray[boolValueIndex]
+                        rolesArr.push(roleSequencedArray[boolValueIndex])
                         noOfRoles++
                         console.log("No of Roles: ",noOfRoles);
                     }
                 }
-
+                console.log(rolesArr);
+                res.json({
+                    status: "ok",
+                    Roles: rolesArr,
+                    numOfRoles: noOfRoles
+                })
              }
-             else{
-               roles = "None"
-               noOfRoles = 0
-             }
-  
         })        
         
         childPython.stderr.on('data',(data)=>{
@@ -76,19 +79,7 @@ if(dat != null){
 
 
     }
-
-    res.json({
-        status: "ok",
-        Roles: roles,
-        numOfRoles: noOfRoles
-    })
 })
-
-
-// Developer, ML engineer, Management ,  Marketing , Security , Data Engineer , Network Engineer , Data Analysis , Computer Analyst , Content Writer
-
-
-
 
 //send final prediction
 app.get("/CareerForm", cors(), (req, res) => {
