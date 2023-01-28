@@ -32,6 +32,7 @@ function Editor(props) {
   });
 
   const handlePointUpdate = (value, index) => {
+    handleSubmission()
     const tempValues = { ...values };
     if (!Array.isArray(tempValues.points)) tempValues.points = [];
     tempValues.points[index] = value;
@@ -362,7 +363,9 @@ function Editor(props) {
         return null;
     }
   };
-
+  useEffect(()=>{
+    handleSubmission()
+  },[[]])
   const handleSubmission = () => {
     switch (sections[activeSectionKey]) {
       case sections.basicInfo: {
