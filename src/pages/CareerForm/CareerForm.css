@@ -23,6 +23,7 @@
     margin-left: 30px;
     font-size: 3rem;
     padding: 10px;
+    color: var(--dark-purple);
 }
 
 .form-container{
@@ -67,19 +68,18 @@
     text-transform:capitalize;
     margin-top: 5px;
     padding-left: 5px;
-
 }
 
 .form-button{
-    margin: 30vh;
-    margin-top: 15vh;
+    margin: 10px 0;
+    /* margin-top: 15vh; */
     text-align: center;
 }
 
 .form-submit{
     height: 3rem;
     width: 8rem;
-    background-color: darkslategray;
+    background-color: var(--dark-purple);
     font-size: large;
     color: whitesmoke;
     border-radius: 7px;

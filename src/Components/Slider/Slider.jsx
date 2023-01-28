@@ -12,7 +12,8 @@ function Slider() {
   return (
     <>
       <div className="slider-main-body">
-        <div className="heading">Select from the following templates</div>
+        <div className="heading">Build your resume</div>
+        <div className="subheading">Select from the following templates</div>
         <div className="template-container grid12">
           <Link to="/body" className="template" style={{ backgroundImage: `url(${images[0].img})` }}>
           </Link>
