@@ -6,7 +6,7 @@ import axios from "axios";
 
 function CareerForm() {
 
-    
+
     const [prediction, setPrediction] = useState();
 
     const [RW, setRW] = useState();
@@ -29,47 +29,44 @@ function CareerForm() {
     const [CON, setCON] = useState();
     const [LIVE, setLIVE] = useState();
 
-    
+
 
 
     //get prediction
     useEffect(() => {
-       
-       axios.get("http://localhost:4000/CareerForm").then((res)=>{
-        if(res.data!=null){
-            setPrediction(res.data)
-            console.log(prediction)
-        }
-       })           
-    },[]);
+
+        axios.get("http://localhost:4000/CareerForm").then((res) => {
+            if (res.data != null) {
+                setPrediction(res.data)
+                console.log(prediction)
+            }
+        })
+    }, []);
 
 
 
-   
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Form submitted');
-            let tensor = ([RW[0], RW[1], CGPA, WD, DA, TP, NTP, GAC, MA, COM, SEC, BD, STAT, ENG, EVE, TB, MAR, ML, CON, LIVE])
-            tensor = tensor.toString()
-            console.log(tensor)
+        let tensor = ([RW[0], RW[1], CGPA, WD, DA, TP, NTP, GAC, MA, COM, SEC, BD, STAT, ENG, EVE, TB, MAR, ML, CON, LIVE])
+        tensor = tensor.toString()
+        console.log(tensor)
 
-            try {
-                await axios.post("http://localhost:4000/post_tensor",{
-                    tensor
-                })
-            } catch (error) {
-                console.log(error)
-            }
-            
+        try {
+            await axios.post("http://localhost:4000/post_tensor", {
+                tensor
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     return (
 
         <form onSubmit={handleSubmit} className="form-main" method="POSt">
-
-            <Navbar />
-
             <div className="info">
                 <p className="form-info" style={{ marginTop: "12vh" }}>Our AI will help you better understand your choices.</p>
                 <h2 className="form-heading">TAKE THE QUIZ NOW</h2>
@@ -98,7 +95,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes1" name="web-exp" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes1">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no1" name="web-exp" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no1">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no1">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -107,7 +104,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes2" name="analysis" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes2">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no2" name="analysis" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no2">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no2">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -116,7 +113,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes3" name="tech" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes3">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no3" name="tech" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no3">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no3">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -125,7 +122,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes4" name="non_tech" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes4">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no4" name="non_tech" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no4">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no4">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -134,7 +131,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes5" name="coding" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes5">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no5" name="coding" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no5">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no5">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -143,7 +140,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes6" name="mobdev" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes6">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no6" name="mobdev" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no6">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no6">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -152,7 +149,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes7" name="communication" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes7">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no7" name="communication" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no7">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no7">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -161,7 +158,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes8" name="security" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes8">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no8" name="security" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no8">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no8">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -170,7 +167,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes9" name="bigdata" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes9">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no9" name="bigdata" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no9">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no9">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -179,7 +176,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes10" name="ds" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes10">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no10" name="ds" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no10">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no10">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -188,7 +185,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes11" name="english" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes11">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no11" name="english" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no11">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no11">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -197,7 +194,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes12" name="event" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes12">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no12" name="event" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no12">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no12">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -206,7 +203,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes13" name="blogs" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes13">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no13" name="blogs" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no13">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no13">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -215,7 +212,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes14" name="marketing" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes14">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no14" name="marketing" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no14">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no14">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -224,7 +221,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes15" name="ai" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes15">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no15" name="ai" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no15">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no15">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -233,7 +230,7 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes16" name="connection" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes16">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no16" name="connection" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no16">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no16">No</label>
                     </div>
                 </div>
                 <div className="form-row">
@@ -242,11 +239,11 @@ function CareerForm() {
                         <input type="radio" style={{ paddingLeft: "5px" }} id="yes17" name="live_project" value="1" />
                         <label style={{ marginLeft: "8px" }} for="yes17">Yes</label><br />
                         <input type="radio" style={{ paddingLeft: "5px" }} id="no17" name="live_project" value="0" />
-                        <label style={{ marginLeft: "8px" }} for="no17">NO</label>
+                        <label style={{ marginLeft: "8px" }} for="no17">No</label>
                     </div>
                 </div>
                 <div className="prediction">
-                    <p>{}</p>
+                    <p>{ }</p>
                 </div>
 
             </div>
