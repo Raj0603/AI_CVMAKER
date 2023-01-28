@@ -662,9 +662,9 @@ function Editor(props) {
         <button className={styles.button} onClick={handleSubmission}>Save</button>
         
       </div>
-      <Link to="/Slider" style={{textDecoration:"none"}}>
+      {/* <Link to="/Slider" style={{textDecoration:"none"}}>
       <button className={`${styles.next} ${styles.button}`}  >Next</button>
-      </Link>
+      </Link> */}
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 
 import Editor from "../Editor/Editor";
+import ReactToPrint from "react-to-print";
+import Resumetemp from "../resume temp/Resumetemp";
 import Resumetemp2 from "../Resume temp 2/Resumetemp2";
 import Navbar from "../../Navbar/Navbar";
 
@@ -60,25 +62,38 @@ function Body() {
 
     <div className={styles.main}>
 
-      <Navbar/>
-    <div className={styles.container}>
-      <p className={styles.heading}>Resume Builder</p>
-      <div className={styles.toolbar}>
-        
+      <Navbar />
+      <div className={styles.container}>
+        <p className={styles.heading}>Resume Builder</p>
+        <div className={styles.toolbar}>
+
+        </div>
+
+
+        <div className={styles.main}>
+          <Editor
+            sections={sections}
+            information={resumeInformation}
+            setInformation={setResumeInformation}
+          />
+          <Resumetemp
+            ref={resumeRef}
+            sections={sections}
+            information={resumeInformation}
+          />
+
+          <ReactToPrint
+            trigger={() => {
+              return (
+                <button className={styles.button}>
+                  Download
+                </button>
+              );
+            }}
+            content={() => resumeRef.current}
+          />
+        </div>
       </div>
-      <div className={styles.main}>
-        <Editor
-          sections={sections}
-          information={resumeInformation}
-          setInformation={setResumeInformation}
-        />
-        <Resumetemp2
-          ref={resumeRef}
-          sections={sections}
-          information={resumeInformation}
-        />
-      </div>
-    </div>
     </div>
   );
 }
