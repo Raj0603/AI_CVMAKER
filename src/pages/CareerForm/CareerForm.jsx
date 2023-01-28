@@ -37,7 +37,7 @@ function CareerForm() {
         axios.get("http://localhost:4000/CareerForm").then((res) => {
             if (res.data != null) {
                 // setPrediction(res.data)
-                // console.log(res.data)
+                console.log(res.data)
             }
         })
     }, []);
@@ -48,24 +48,26 @@ function CareerForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setPrediction("Engineer")
-        window.scroll('200px')
+        setPrediction("Waiting for response...")
         console.log('Form submitted');
+        // let tensor = ([CGPA,WD,DA,RW[0], RW[1], TP, NTP, GAC, MA, COM, SEC, BD, STAT, ENG, EVE, TB, MAR, ML, CON, LIVE])
         let tensor = ([RW[0], RW[1], CGPA, WD, DA, TP, NTP, GAC, MA, COM, SEC, BD, STAT, ENG, EVE, TB, MAR, ML, CON, LIVE])
         tensor = tensor.toString()
-        console.log(tensor)
-
         try {
             await axios.post("http://localhost:4000/post_tensor", {
                 tensor
             }).then((res) => {
                 var yourRole = ""
                 if (res.data != null) {
-                    // setPrediction(res.data)
                     console.log(res.data)
                     let roleArr = res.data.Roles
-                    for (const roles of roleArr) {
-                        yourRole += roles + " ";
+                    for (const rolesIndex in roleArr) {
+                        console.log(roleArr.length, parseInt(rolesIndex) + 1);
+                        if(roleArr.length !== parseInt(rolesIndex) + 1){
+                            yourRole += roleArr[rolesIndex] + " & ";
+                        }else{
+                            yourRole += roleArr[rolesIndex] + "  ";
+                        }
                     }
                     setPrediction(yourRole)
                 }
@@ -98,7 +100,7 @@ function CareerForm() {
                     </div>
                     <div className="form-row">
                         <div className="form-col"><label className="form-label" style={{ margin: "10px" }}><strong>CGPA</strong><br /></label></div>
-                        <div className="form-col"><input type="number" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g" style={{ margin: "8px" }} value={CGPA} onChange={(e) => setCGPA(e.target.value)} /></div>
+                        <div className="form-col"><input type="number" maxlength="10" minLength="1" maxLength="10" oninput="this.value=this.value.replace(/[^0-9]/g" style={{ margin: "8px" }} value={CGPA} onChange={(e) => setCGPA(e.target.value)} /></div>
                     </div>
                     <div className="form-row">
                         <div className="form-col"><label className="form-label" style={{ margin: "10px" }}><strong>web dev experience</strong><br /></label></div>

@@ -32,7 +32,7 @@ app.post("/post_tensor", cors(), async (req, res) => {
     // console.log("Data:",dat,"=",dat[0],dat[2],dat[3])
 
     //call ai model
-roleSequencedArray = ["Computer Analyst","Developer", "Data Analysis","Data Engineer", "Content Writer" ,"ML Engineer","Management",
+roleSequencedArray = ["Computer Analyst","Content Writer", "Data Analysis","Data Engineer", "Developer" ,"ML Engineer","Management",
 "Marketing","Network Engineer","Security"]
 if(dat != null){
         const childPython = spawn('python',['../keras_ai_model/ann.py', dat]);
