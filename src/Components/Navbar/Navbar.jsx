@@ -1,36 +1,34 @@
 import "./Navbar.css"
-import {Link} from "react-router-dom"
-import logo from "../../assets/careerclue.png"
+import { NavLink } from "react-router-dom"
+// import logo from "../../assets/careerclue.png"
+import logo from "../../assets/Logo/logo-removebg-preview.png"
 
 function Navbar() {
     return (
         <>
-            <div className="login-signup">
-                <img src={logo} className="logo" />
-                <Link to="/Signup">
-                <button className="home-signup">Signup</button>
-                </Link>
-                <Link to="/Login">
-                <button className="home-login">Login</button>
-                </Link>
-            </div>
-            <div className="home-navbar">
-                <Link to="/">
-
-                <a href="" className="home-nav-ele">HOME</a>
-                </Link>
-                <Link to="/CareerForm">
-                <a href="" className="home-nav-ele">career guide</a>
-                </Link>
-                <Link to="/Slider">
-                <a href="" className="home-nav-ele">resume building</a>
-                </Link>
-                <Link to="/Contact">
-                <a href="" className="home-nav-ele">Contact US</a>
-                </Link>
-                <Link to="/Faq">
-                <a href="" className="home-nav-ele" style={{ borderRight: "none" }}>FAQ</a>
-                </Link>
+            <div className="navbar flex">
+                <div className="navbar-logo">
+                    <NavLink to="/" exact={true} end>
+                        <img src={logo} className="logo" />
+                    </NavLink>
+                </div>
+                <div className="navbar-links-container flex">
+                    <NavLink to="/" className="navbar-links flex spaceCenter" exact={true} end>
+                        Home
+                    </NavLink>
+                    <NavLink to="/CareerForm" className="navbar-links flex spaceCenter" exact={true} end>
+                        Career Guide
+                    </NavLink>
+                    <NavLink to="/Slider" className="navbar-links flex spaceCenter" exact={true} end>
+                        Resume Building
+                    </NavLink>
+                    <NavLink to="/Contact" className="navbar-links flex spaceCenter" exact={true} end>
+                        Contact Us
+                    </NavLink>
+                    <NavLink to="/Faq" className="navbar-links flex spaceCenter" exact={true} end>
+                        FAQ
+                    </NavLink>
+                </div>
             </div>
         </>
     )
