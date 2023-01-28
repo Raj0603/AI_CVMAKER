@@ -54,5 +54,6 @@
 .navbar-links.active {
     color: var(--pale-yellow);
     background-color: var(--medium-purple);
+    /* background-color: var(--dark-purple); */
 
 }
