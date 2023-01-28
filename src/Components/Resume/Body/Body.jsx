@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 import Editor from "../Editor/Editor";
 import ReactToPrint from "react-to-print";
-import Resumetemp from "../resume temp/Resumetemp";
+// import Resumetemp from "../resume temp/Resumetemp";
 import Resumetemp2 from "../Resume temp 2/Resumetemp2";
 import Navbar from "../../Navbar/Navbar";
 
@@ -76,7 +76,9 @@ function Body() {
             sections={sections}
             information={resumeInformation}
           />
-          <ReactToPrint
+          
+        </div>
+        <ReactToPrint
             trigger={() => {
               return (
                 <button className={styles.button}>
@@ -86,7 +88,6 @@ function Body() {
             }}
             content={() => resumeRef.current}
           />
-        </div>
     </div >
   );
 }

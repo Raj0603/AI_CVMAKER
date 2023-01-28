@@ -9,6 +9,7 @@ import InputControl from "../InputControl/InputControl";
 import styles from "./Editor.module.css";
 
 function Editor(props) {
+
   const sections = props.sections;
   const information = props.information;
 
@@ -663,9 +664,7 @@ function Editor(props) {
 
           <button className={styles.button} onClick={handleSubmission}>Save</button>
 
-          <Link to="/Slider" style={{ textDecoration: "none" }}>
-            <button className={`${styles.next} ${styles.button}`} >Next</button>
-          </Link>
+          
         </div>
       </div>
     </div>
