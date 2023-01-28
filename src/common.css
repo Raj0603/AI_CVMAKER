@@ -1,5 +1,7 @@
 * {
     transition: 0.3s;
+    /* font-family: "Poppins", sans-serif; */
+    font-family: "Montserrat", sans-serif;
 }
 
 *::-webkit-scrollbar {

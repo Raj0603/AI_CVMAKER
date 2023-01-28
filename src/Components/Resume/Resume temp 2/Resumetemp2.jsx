@@ -224,7 +224,7 @@ const Resumetemp2 = forwardRef((props, ref) => {
                     <ul>
                         <li>
                             {info.workExp?.details?.map((item) => (
-                                <div  key={item.title}>
+                                <div key={item.title}>
                                     {item.title ? (
                                         <p >{item.title}</p>
                                     ) : (
@@ -236,7 +236,7 @@ const Resumetemp2 = forwardRef((props, ref) => {
                                         <span />
                                     )}
                                     {item.certificationLink ? (
-                                        <a  href={item.certificationLink}>
+                                        <a href={item.certificationLink}>
                                             <Paperclip />
                                             {item.certificationLink}
                                         </a>
@@ -261,7 +261,7 @@ const Resumetemp2 = forwardRef((props, ref) => {
                                     {item.points?.length > 0 ? (
                                         <ul >
                                             {item.points?.map((elem, index) => (
-                                                <li  key={elem + index}>
+                                                <li key={elem + index}>
                                                     {elem}
                                                 </li>
                                             ))}
@@ -295,28 +295,28 @@ const Resumetemp2 = forwardRef((props, ref) => {
                     </div>
                     <ul>
                         <li>
-                        {info.education?.details?.map((item) => (
-            <div >
-              {item.title ? (
-                <p >{item.title}</p>
-              ) : (
-                <span />
-              )}
-              {item.college ? (
-                <p >{item.college}</p>
-              ) : (
-                <span />
-              )}
-              {item.startDate && item.endDate ? (
-                <div >
-                  <Calendar /> {getFormattedDate(item.startDate)} -
-                  {getFormattedDate(item.endDate)}
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-          ))}
+                            {info.education?.details?.map((item) => (
+                                <div >
+                                    {item.title ? (
+                                        <p >{item.title}</p>
+                                    ) : (
+                                        <span />
+                                    )}
+                                    {item.college ? (
+                                        <p >{item.college}</p>
+                                    ) : (
+                                        <span />
+                                    )}
+                                    {item.startDate && item.endDate ? (
+                                        <div >
+                                            <Calendar /> {getFormattedDate(item.startDate)} -
+                                            {getFormattedDate(item.endDate)}
+                                        </div>
+                                    ) : (
+                                        ""
+                                    )}
+                                </div>
+                            ))}
                         </li>
                         {/* <li>
                             <div className="date">2000 - 2010</div>

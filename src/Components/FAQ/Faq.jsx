@@ -9,6 +9,7 @@ function Faq() {
 
             </div>
             <div id="container">
+                <br /><br />
                 <h1>Frequently Asked Questions</h1>
                 <div id="Questions">
                     <h2>What is the carreer guidance tool?</h2>

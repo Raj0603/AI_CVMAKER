@@ -340,9 +340,9 @@ function Editor(props) {
     </div>
   );
 
-  const generateBody = () => { 
+  const generateBody = () => {
 
-    
+
     switch (sections[activeSectionKey]) {
       case sections.basicInfo:
         return basicInfoBody;
@@ -557,8 +557,8 @@ function Editor(props) {
           ? [...activeInfo.details[0]?.points]
           : ""
         : activeInfo?.points
-        ? [...activeInfo.points]
-        : "",
+          ? [...activeInfo.points]
+          : "",
       title: activeInfo?.details
         ? activeInfo.details[0]?.title || ""
         : activeInfo?.detail?.title || "",
@@ -604,9 +604,8 @@ function Editor(props) {
       <div className={styles.header}>
         {Object.keys(sections)?.map((key) => (
           <div
-            className={`${styles.section} ${
-              activeSectionKey === key ? styles.active : ""
-            }`}
+            className={`${styles.section} ${activeSectionKey === key ? styles.active : ""
+              }`}
             key={key}
             onClick={() => setActiveSectionKey(key)}
           >
@@ -626,29 +625,28 @@ function Editor(props) {
         <div className={styles.chips}>
           {activeInformation?.details
             ? activeInformation?.details?.map((item, index) => (
-                <div
-                  className={`${styles.chip} ${
-                    activeDetailIndex === index ? styles.active : ""
+              <div
+                className={`${styles.chip} ${activeDetailIndex === index ? styles.active : ""
                   }`}
-                  key={item.title + index}
-                  onClick={() => setActiveDetailIndex(index)}
-                >
-                  <p className={styles.editorp}>
-                    {sections[activeSectionKey]} {index + 1}
-                  </p>
-                  <X
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      handleDeleteDetail(index);
-                    }}
-                  />
-                </div>
+                key={item.title + index}
+                onClick={() => setActiveDetailIndex(index)}
+              >
+                <p className={styles.editorp}>
+                  {sections[activeSectionKey]} {index + 1}
+                </p>
+                <X
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleDeleteDetail(index);
+                  }}
+                />
+              </div>
 
-                
-              ))
+
+            ))
             : ""}
           {activeInformation?.details &&
-          activeInformation?.details?.length > 0 ? (
+            activeInformation?.details?.length > 0 ? (
             <div className={styles.new} onClick={handleAddNew}>
               +New
             </div>
@@ -658,13 +656,15 @@ function Editor(props) {
         </div>
 
         {generateBody()}
+        <div className="buttonContainer flex">
 
-        <button className={styles.button} onClick={handleSubmission}>Save</button>
-        
+          <button className={styles.button} onClick={handleSubmission}>Save</button>
+
+          <Link to="/Slider" style={{ textDecoration: "none" }}>
+            <button className={`${styles.next} ${styles.button}`} >Next</button>
+          </Link>
+        </div>
       </div>
-      <Link to="/Slider" style={{textDecoration:"none"}}>
-      <button className={`${styles.next} ${styles.button}`}  >Next</button>
-      </Link>
     </div>
   );
 }

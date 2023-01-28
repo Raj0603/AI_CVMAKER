@@ -6,8 +6,8 @@ import Signup from './Components/SignUp/Signup';
 import Home from './pages/Home/Home';
 import Contact from "./Components/Contact/Contact"
 import Body from "./Components/Resume/Body/Body"
-import Resumetemp2 from "./Components/Resume/Resume temp 2/Resumetemp2"
-import template from './Components/Template/template';
+// import Resumetemp2 from "./Components/Resume/Resume temp 2/Resumetemp2"
+// import template from './Components/Template/template';
 // import {useEffect} from "react"
 // import {gapi} from "gapi-script"
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
@@ -17,6 +17,7 @@ import Login from './Components/Login/Login';
 import { initialState, reducer } from '../src/reducer/UseReducer';
 import CareerForm from './pages/CareerForm/CareerForm';
 import Slider from './Components/Slider/Slider';
+import Navbar from "./Components/Navbar/Navbar"
 
 import "./common.css"
 
@@ -26,13 +27,11 @@ const Routing = () => {
   return (
     <>
       <div className="App">
-
         {/* <Home/> */}
-
         <Router>
+          <Navbar />
           <Routes>
             <Route path='/' element={<Home />}></Route>
-
             <Route path='/Signup' element={<Signup />}></Route>
             <Route path='/Body' element={<Body />}></Route>
             <Route path='/CareerForm' element={<CareerForm />}></Route>
@@ -41,14 +40,8 @@ const Routing = () => {
             <Route path='/template' element={<template />}></Route>
             <Route path='/Contact' element={<Contact />}></Route>
             <Route path='/Faq' element={<Faq />}></Route>
-
-
-
-            {/* <Route path='/Home' element={<Home />}></Route> */}
-
           </Routes>
         </Router>
-
       </div>
     </>
   )

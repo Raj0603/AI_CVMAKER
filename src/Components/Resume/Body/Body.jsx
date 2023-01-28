@@ -58,28 +58,24 @@ function Body() {
 
   return (
 
-    <div className={styles.main}>
+    <div className={`${styles.main} flex `} >
+        <p className={styles.heading}>Resume Builder</p>
+        <div className={styles.toolbar}>
 
-      <Navbar/>
-    <div className={styles.container}>
-      <p className={styles.heading}>Resume Builder</p>
-      <div className={styles.toolbar}>
-        
-      </div>
-      <div className={styles.main}>
-        <Editor
-          sections={sections}
-          information={resumeInformation}
-          setInformation={setResumeInformation}
-        />
-        <Resumetemp2
-          ref={resumeRef}
-          sections={sections}
-          information={resumeInformation}
-        />
-      </div>
-    </div>
-    </div>
+        </div>
+        <div className={`${styles.innerMain} flex`}>
+          <Editor
+            sections={sections}
+            information={resumeInformation}
+            setInformation={setResumeInformation}
+          />
+          <Resumetemp2
+            ref={resumeRef}
+            sections={sections}
+            information={resumeInformation}
+          />
+        </div>
+    </div >
   );
 }
 

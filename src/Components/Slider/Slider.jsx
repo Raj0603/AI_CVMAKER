@@ -11,7 +11,6 @@ function Slider() {
 
   return (
     <div className="carousel">
-      <Navbar />
       <div
         className="carouselInner"
         style={{ backgroundImage: `url(${images[currImg].img})` }}
@@ -25,11 +24,10 @@ function Slider() {
           <ArrowBackIosIcon style={{ fontSize: 30 }} />
         </div>
         {/* <Link to="/Resumetemp2"> */}
-          <div className="center">
-            <h1 className="slider-h1" >{images[currImg].title}</h1>
-            <p className="slider-p" >{images[currImg].subtitle}</p>
-          </div>
-        {/* </Link> */}
+        <div className="center">
+          <h1 className="slider-h1" >{images[currImg].title}</h1>
+          <p className="slider-p" >{images[currImg].subtitle}</p>
+        </div>
         <div
           className="right"
           onClick={() => {
@@ -39,9 +37,9 @@ function Slider() {
           <ArrowForwardIosIcon style={{ fontSize: 30 }} />
         </div>
       </div>
-        <Link to="/Body">
+      <Link to="/Body">
         <button className="slider-button">Use This Template</button>
-        </Link>
+      </Link>
     </div>
   );
 }
