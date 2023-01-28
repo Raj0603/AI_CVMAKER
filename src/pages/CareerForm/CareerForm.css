@@ -23,6 +23,7 @@
     margin-left: 30px;
     font-size: 3rem;
     padding: 10px;
+    color: var(--dark-purple);
 }
 
 .form-container{
@@ -33,15 +34,12 @@
     width: 50vw;
     text-align: center;
     margin: auto;
-    margin-top: 15vh;
-    background-color: rgba(193, 131, 245, 0.45);
-    box-shadow:
-      0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075),
-      0 4px 4px hsl(0deg 0% 0% / 0.075),
-      0 8px 8px hsl(0deg 0% 0% / 0.075),
-      0 16px 16px hsl(0deg 0% 0% / 0.075)
-    ;
+    border-radius: 20px;
+    border: 2px solid var(--dark-purple);
+    /* margin-top: 15vh; */
+    background-color: rgba(230, 199, 255, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow:0 0 10px 0.1px rgba(68, 68, 68, 0.4);
     
     /* border: 2px solid black; */
     /* box-shadow: 5px 5px rgb(134, 123, 123) ; */
@@ -66,20 +64,22 @@
 }
 
 .form-col{
-    margin-top: 10px;
+    color: black;
+    text-transform:capitalize;
+    margin-top: 5px;
     padding-left: 5px;
 }
 
 .form-button{
-    margin: 30vh;
-    margin-top: 15vh;
+    margin: 10px 0;
+    /* margin-top: 15vh; */
     text-align: center;
 }
 
 .form-submit{
     height: 3rem;
     width: 8rem;
-    background-color: darkslategray;
+    background-color: var(--dark-purple);
     font-size: large;
     color: whitesmoke;
     border-radius: 7px;

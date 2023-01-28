@@ -216,10 +216,11 @@ const Resumetemp2 = forwardRef((props, ref) => {
                                         <span />
                                     )}
                                     {item.certificationLink ? (
-                                        <a href={item.certificationLink}>
+                                        // <a href={item.certificationLink}>
+                                        <>
                                             <Paperclip />
                                             {item.certificationLink}
-                                        </a>
+                                        </>
                                     ) : (
                                         <span />
                                     )}
