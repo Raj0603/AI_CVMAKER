@@ -37,7 +37,6 @@ function CareerForm() {
        
        axios.get("http://localhost:4000/CareerForm").then((res)=>{
         if(res.data!=null){
-
             setPrediction(res.data)
             console.log(prediction)
         }

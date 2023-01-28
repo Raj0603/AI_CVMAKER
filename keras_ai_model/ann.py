@@ -152,7 +152,15 @@ X_test = sc.transform(X_test)
 
 ann = load_model('../keras_ai_model/career2.h5')
 
-dat = tf.constant([1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1])
+dat = sys.argv[1].replace(","," ")
+print(dat)
+floatData = dat.split()
+# print("res:",floatData)
+
+dat = floatData
+print("Data recieved: ",dat)
+# tf.constant([1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1])
+
 single_pred = ann.predict(sc.transform([dat]))
 
 single_pred = (single_pred > 0.2)

@@ -6,7 +6,8 @@ const connection = require("./database");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const { spawn } = require('child_process');
-const getAIMLResult = require("./test")
+const { ok } = require("assert");
+// const getAIMLResult = require("./test")
 //const { tensor } = require("@tensorflow/tfjs");
 
 
@@ -29,20 +30,41 @@ let role = null
 //getting data from career form
 app.post("/post_tensor", cors(), async (req, res) => {
     let { tensor } = req.body;
-    dat = tensor;
-    console.log(dat)
+
+    let result;let roles = new Array(); let noOfRoles = 0
+
+    let tensorString = tensor;
+    const dat = tensorString.split(",");
+    // console.log("Data:",dat,"=",dat[0],dat[2],dat[3])
 
     //call ai model
-    if(dat != null){
-        const childPython = spawn('python',['../keras_ai_model/ann.py',dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],
-        dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0],dat[0]]);
-    
+roleSequencedArray = ["Computer Analyst","Content Writer", "Data Analysis","Data Engineer", "Developer" ,"ML Engineer","Management",
+"Marketing","Network Engineer","Security"]
+if(dat != null){
+        const childPython = spawn('python',['../keras_ai_model/ann.py', dat]);
         childPython.stdout.on('data',(data)=>{
             role = {data};
-             console.log(`${data}`);
-        })
-        
-        
+             console.log(`${data.toString()}`);
+             if(data.toString().length === 59){ 
+                result = data.toString().substr(2,53).replace(/ True/g,"True").split(" ")
+                // console.log("Result: ",result);
+                for (const boolValueIndex in result) {
+                    console.log(result[boolValueIndex]);
+                    if(result[boolValueIndex] == "True"){
+                        console.log(roleSequencedArray[boolValueIndex]);
+                        roles[noOfRoles] = roleSequencedArray[boolValueIndex]
+                        noOfRoles++
+                        console.log("No of Roles: ",noOfRoles);
+                    }
+                }
+
+             }
+             else{
+               roles = "None"
+               noOfRoles = 0
+             }
+  
+        })        
         
         childPython.stderr.on('data',(data)=>{
             console.error(`${data}`);
@@ -51,9 +73,19 @@ app.post("/post_tensor", cors(), async (req, res) => {
         childPython.on('close',(code)=>{
             console.log(`child process exited with code ${code}`);
         })
+
+
     }
+
+    res.json({
+        status: "ok",
+        Roles: roles,
+        numOfRoles: noOfRoles
+    })
 })
 
+
+// Developer, ML engineer, Management ,  Marketing , Security , Data Engineer , Network Engineer , Data Analysis , Computer Analyst , Content Writer
 
 
 
