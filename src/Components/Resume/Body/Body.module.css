@@ -2,7 +2,7 @@
   background-image: url("../../../assets/Form.svg");
   background-repeat: no-repeat;
   width: calc(100vw - 8px);
-  height: 100vh;
+  min-height: 100vh;
   padding: 64px 0 0 0;
   background-size: cover;
   border: 2px solid red;

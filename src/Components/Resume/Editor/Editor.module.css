@@ -49,8 +49,8 @@
 }
 
 .header .active {
-  border-bottom: 2px solid var(--medium-purple);
-  color: var(--medium-purple);
+  border-bottom: 2px solid var(--dark-purple);
+  color: var(--dark-purple);
 }
 
 .body {
@@ -91,7 +91,7 @@
 }
 
 .chips .new {
-  color: var(--medium-purple);
+  color: var(--dark-purple);
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
@@ -121,7 +121,7 @@
 }
 
 .chips .active {
-  background-color: var(--medium-purple);
+  background-color: var(--dark-purple);
 }
 
 .body .button {
@@ -129,7 +129,7 @@
   width: fit-content;
   padding: 8px 16px;
   border-radius: 5px;
-  background-color: var(--medium-purple);
+  background-color: var(--dark-purple);
   color: #fff;
   outline: none;
   border: none;

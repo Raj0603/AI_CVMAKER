@@ -40,7 +40,7 @@
 
 .resume .resume_left {
   width: 280px;
-  background: #59a9b5;
+  background: var(--dark-purple);
 }
 
 .resume .resume_left .resume_profile {
@@ -66,12 +66,12 @@
 }
 
 .resume .resume_left .regular {
-  color: #b1eaff;
+  color: var(--light-purple);
 }
 
 .resume .resume_item {
   padding: 25px 0;
-  border-bottom: 2px solid #b1eaff;
+  border-bottom: 2px solid var(--light-purple);
 }
 
 .resume .resume_left .resume_item:last-child,
@@ -93,7 +93,7 @@
   width: 35px;
   height: 35px;
   background: #fff;
-  color: #59a9b5;
+  color: var(--dark-purple);
   border-radius: 50%;
   margin-right: 15px;
   font-size: 16px;
@@ -109,27 +109,19 @@
 }
 
 .resume .resume_left ul li .data {
-  color: #b1eaff;
+  color: var(--light-purple);
 }
 
 .resume .resume_left .resume_skills ul li {
   display: flex;
   margin-bottom: 10px;
-  color: #b1eaff;
+  color: var(--light-purple);
   justify-content: space-between;
   align-items: center;
 }
 
 .resume .resume_left .resume_skills ul li .skill_name {
   width: 25%;
-}
-
-.resume .resume_left .resume_skills ul li .skill_progress {
-  width: 60%;
-  margin: 0 5px;
-  height: 5px;
-  background: #009fd9;
-  position: relative;
 }
 
 .resume .resume_left .resume_skills ul li .skill_per {
@@ -156,7 +148,7 @@
 }
 
 .resume .resume_right .bold {
-  color: #59a9b5;
+  color: var(--dark-purple);
 }
 
 .resume .resume_right .resume_work ul,
@@ -192,7 +184,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  border: 2px solid #59a9b5;
+  border: 2px solid var(--dark-purple);
 }
 
 .resume .resume_right .resume_work ul li:after,
@@ -203,7 +195,7 @@
   left: -21px;
   width: 2px;
   height: 115px;
-  background: #59a9b5;
+  background: var(--dark-purple);
 }
 
 .resume .resume_right .resume_hobby ul {
@@ -214,10 +206,10 @@
 .resume .resume_right .resume_hobby ul li {
   width: 80px;
   height: 80px;
-  border: 2px solid #59a9b5;
+  border: 2px solid var(--dark-purple);
   border-radius: 50%;
   position: relative;
-  color: #59a9b5;
+  color: var(--dark-purple);
 }
 
 .resume .resume_right .resume_hobby ul li i {
@@ -231,7 +223,7 @@
   right: -52px;
   width: 50px;
   height: 2px;
-  background: #59a9b5;
+  background: var(--dark-purple);
 }
 
 .resume .resume_right .resume_hobby ul li:last-child:before {

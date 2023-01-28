@@ -121,46 +121,26 @@ const Resumetemp2 = forwardRef((props, ref) => {
                                 <div className="skill_name">
                                     {info.skills.points[0]}
                                 </div>
-                                <div className="skill_progress">
-                                    <span style={{ width: "80%" }}></span>
-                                </div>
-                                <div className="skill_per">80%</div>
                             </li>
                             <li>
                                 <div className="skill_name">
                                     {info.skills.points[1]}
                                 </div>
-                                <div className="skill_progress">
-                                    <span style={{ width: "74%" }}></span>
-                                </div>
-                                <div className="skill_per">74%</div>
                             </li>
                             <li>
                                 <div className="skill_name">
                                     {info.skills.points[2]}
                                 </div>
-                                <div className="skill_progress">
-                                    <span style={{ width: "68%" }}></span>
-                                </div>
-                                <div className="skill_per">68%</div>
                             </li>
                             <li>
                                 <div className="skill_name">
                                     {info.skills.points[3]}
                                 </div>
-                                <div className="skill_progress">
-                                    <span style={{ width: "60%" }}></span>
-                                </div>
-                                <div className="skill_per">60%</div>
                             </li>
                             <li>
                                 <div className="skill_name">
                                     {info.skills.points[4]}
                                 </div>
-                                <div className="skill_progress">
-                                    <span style={{ width: "55%" }}></span>
-                                </div>
-                                <div className="skill_per">55%</div>
                             </li>
                         </ul>
                     </div>
