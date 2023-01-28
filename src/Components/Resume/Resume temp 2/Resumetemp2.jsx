@@ -47,57 +47,58 @@ const Resumetemp2 = forwardRef((props, ref) => {
     }, [props.activeColor]);
 
     return (
-        <div className="resume">
-            <div className="resume_left">
-                <div className="resume_content">
-                    <div className="resume_item resume_info">
-                        <div className="title">
-                            <p className="bold">{info.basicInfo?.detail?.name}</p>
-                            <p className="regular">{info.basicInfo?.detail?.title}</p>
-                        </div>
-                        <ul>
-                            <li>
-                                {/* <div className="icon">
+        <div ref={ref}>
+            <div ref={containerRef} className="resume">
+                <div className="resume_left">
+                    <div className="resume_content">
+                        <div className="resume_item resume_info">
+                            <div className="title">
+                                <p className="bold">{info.basicInfo?.detail?.name}</p>
+                                <p className="regular">{info.basicInfo?.detail?.title}</p>
+                            </div>
+                            <ul>
+                                <li>
+                                    {/* <div className="icon">
                                     <i className="fas fa-map-signs"></i>
                                 </div> */}
-                                <div className="data">
-                                    {info.basicInfo?.detail?.email ? (
-                                        <a> <AtSign /> {info.basicInfo?.detail?.email} </a>
-                                    ) : (
-                                        <span />
-                                    )}
-                                </div>
-                            </li>
-                            <li>
-                                {/* <div className="icon">
+                                    <div className="data">
+                                        {info.basicInfo?.detail?.email ? (
+                                            <a> <AtSign /> {info.basicInfo?.detail?.email} </a>
+                                        ) : (
+                                            <span />
+                                        )}
+                                    </div>
+                                </li>
+                                <li>
+                                    {/* <div className="icon">
                                     <i className="fas fa-mobile-alt"></i>
                                 </div> */}
-                                <div className="data">
-                                    {info.basicInfo?.detail?.phone ? (
-                                        <a >
-                                            <Phone /> {info.basicInfo?.detail?.phone}
-                                        </a>
-                                    ) : (
-                                        <span />
-                                    )}
-                                </div>
-                            </li>
-                            <li>
-                                {/* <div className="icon">
+                                    <div className="data">
+                                        {info.basicInfo?.detail?.phone ? (
+                                            <a >
+                                                <Phone /> {info.basicInfo?.detail?.phone}
+                                            </a>
+                                        ) : (
+                                            <span />
+                                        )}
+                                    </div>
+                                </li>
+                                <li>
+                                    {/* <div className="icon">
                                     <i className="fas fa-envelope"></i>
                                 </div> */}
-                                <div className="data">
-                                    {info.basicInfo?.detail?.linkedin ? (
-                                        <a >
-                                            <Linkedin /> {info.basicInfo?.detail?.linkedin}
-                                        </a>
-                                    ) : (
-                                        <span />
-                                    )}
-                                </div>
-                            </li>
-                            <li>
-                                {/* <div className="icon">
+                                    <div className="data">
+                                        {info.basicInfo?.detail?.linkedin ? (
+                                            <a >
+                                                <Linkedin /> {info.basicInfo?.detail?.linkedin}
+                                            </a>
+                                        ) : (
+                                            <span />
+                                        )}
+                                    </div>
+                                </li>
+                                <li>
+                                    {/* <div className="icon">
                                     <i className="fab fa-weebly"></i>
                                 </div> */}
                                 <div className="data">
@@ -254,7 +255,7 @@ const Resumetemp2 = forwardRef((props, ref) => {
                             ))}
                         </li>
 
-                        {/* <li>
+                            {/* <li>
                             <div className="date">2015 - 2017</div>
                             <div className="info">
                                 <p className="semi-bold">Lorem ipsum dolor sit amet.</p>
@@ -306,23 +307,24 @@ const Resumetemp2 = forwardRef((props, ref) => {
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
                             </div>
                         </li> */}
-                    </ul>
-                </div>
-                <div className="resume_item resume_about">
-                    <div className="title">
-                        <p className="bold">Summary</p>
+                        </ul>
                     </div>
-                    <p>{info.summary?.detail}</p>
-                </div>
-                <div className="resume_item resume_hobby">
-                    <div className="title">
-                        <p className="bold">Others</p>
+                    <div className="resume_item resume_about">
+                        <div className="title">
+                            <p className="bold">Summary</p>
+                        </div>
+                        <p>{info.summary?.detail}</p>
                     </div>
-                    <p>{info?.other?.detail}</p>
+                    <div className="resume_item resume_hobby">
+                        <div className="title">
+                            <p className="bold">{info?.other?.title}</p>
+                        </div>
+                        <p>{info?.other?.detail}</p>
 
+                    </div>
                 </div>
-            </div>
-        </div >
+            </div >
+        </div>
     )
 });
 export default Resumetemp2

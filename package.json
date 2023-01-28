@@ -25,6 +25,7 @@
     "react-google-login": "^5.2.2",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.2",
+    "react-to-print": "^2.14.11",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

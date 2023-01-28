@@ -5,7 +5,7 @@
   min-height: 100vh;
   padding: 64px 0 0 0;
   background-size: cover;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .innerMain {
@@ -67,3 +67,5 @@
   /* gap: 30px; */
   width: 100%;
 }
+
+

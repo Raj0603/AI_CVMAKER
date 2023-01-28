@@ -171,3 +171,13 @@
 .next:active {
   transform: translateY(2px);
 }
+@media print {
+  div.centerContainer{ 
+    background-color: green !important; 
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+ }

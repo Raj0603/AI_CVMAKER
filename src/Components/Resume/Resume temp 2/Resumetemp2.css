@@ -229,3 +229,13 @@
 .resume .resume_right .resume_hobby ul li:last-child:before {
   display: none;
 }
+
+
+@media print {
+  .resume{ 
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100vw !important;
+  }
+ }
