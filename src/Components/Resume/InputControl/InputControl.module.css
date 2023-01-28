@@ -14,7 +14,8 @@ input {
   outline: none;
   padding: 10px 12px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
+  transition: 0.12s;
 }
 
 input:hover {
@@ -22,5 +23,6 @@ input:hover {
 }
 
 input:focus {
-  border: 1px solid #239ce2;
+  color: var(--dark-purple);
+  border: 2px solid var(--dark-purple);
 }

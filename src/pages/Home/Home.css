@@ -1,52 +1,77 @@
-.homeContainer{
+.homeContainer {
+    width: 100%;
     /* display: flex; */
     /* flex-direction: column; */
     position: absolute;
     background-image: url("../../assets/home.svg");
+    background-size: cover;
+    /* background-position: center/; */
     background-repeat: no-repeat;
-    height: auto;
-    width: 100%;
+    height: 200vh;
+    /* width: 100%; */
     /* background-size: cover; */
 }
 
-.home-career{
-    position: relative;
-    margin-top: 35vh;
-    width: 43%;
-    padding-left: 4rem;
+.home-career {
+    /* border: 2px solid red; */
+    height: 100vh;
+    /* position: relative; */
+    /* margin-top: 35vh; */
+    width: 100%;
+    /* padding-left: 4rem; */
 }
 
-.home-resume{
+.home-center-div {
+    max-width: 40vw;
+    /* height: auto; */
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    /* border: 2px solid var(--medium-purple); */
+    /* backdrop-filter: blur(10px); */
+    border-radius: 0 20px 20px 0;
+    padding: 20px 10px 20px 50px;
+}
+
+.home-center-div.home-right {
+    border-radius: 20px 0 0 20px;
+}
+.home-right {
+    margin: 0 0 0 auto;
+}
+
+.home-resume {
     position: relative;
     /* margin-top: 8vh; */
-    float: right;
+    /* float: right; */
     width: 35%;
     text-align: right;
     padding: 2rem;
 }
 
-.home-footer{
+.home-footer {
     /* position: relative; */
-    margin-top: 50vh;
+    /* margin-top: 50vh; */
 }
 
-.home-heading{
-    font-size: 2.5rem;
+.home-heading {
+
+    font-size: 50px;
     /* font-weight: 400; */
 }
 
-.home-info{
-    margin-top: 2.3rem;
-    font-size: 1.2rem;
+.home-info {
+    /* margin-top: 2.3rem; */
+    /* font-size: 1.2rem; */
 }
 
-.home-button{
-    margin-top: 3rem;
-    width: 7rem;
-    height: 3rem;
+.home-button {
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    /* margin-top: 3rem; */
+    /* width: 7rem; */
+    /* height: 3rem; */
     border-radius: 2rem;
-    font-size: larger;
+    font-size: 18px;
+    letter-spacing: 0.2px;
     background-color: rgba(193, 131, 245, 0.6);
-    
+    border: 2px solid var(--medium-purple);
 }
-

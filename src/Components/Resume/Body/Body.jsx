@@ -60,28 +60,22 @@ function Body() {
 
   return (
 
-    <div className={styles.main}>
-
-      <Navbar />
-      <div className={styles.container}>
+    <div className={`${styles.main} flex `} >
         <p className={styles.heading}>Resume Builder</p>
         <div className={styles.toolbar}>
 
         </div>
-
-
-        <div className={styles.main}>
+        <div className={`${styles.innerMain} flex`}>
           <Editor
             sections={sections}
             information={resumeInformation}
             setInformation={setResumeInformation}
           />
-          <Resumetemp
+          <Resumetemp2
             ref={resumeRef}
             sections={sections}
             information={resumeInformation}
           />
-
           <ReactToPrint
             trigger={() => {
               return (
@@ -93,8 +87,7 @@ function Body() {
             content={() => resumeRef.current}
           />
         </div>
-      </div>
-    </div>
+    </div >
   );
 }
 
