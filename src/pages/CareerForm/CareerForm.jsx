@@ -8,7 +8,6 @@ function CareerForm() {
 
 
     const [prediction, setPrediction] = useState("");
-
     const [RW, setRW] = useState();
     const [CGPA, setCGPA] = useState();
     const [WD, setWD] = useState();
@@ -49,6 +48,8 @@ function CareerForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setPrediction("Engineer")
+        window.scroll('200px')
         console.log('Form submitted');
         let tensor = ([RW[0], RW[1], CGPA, WD, DA, TP, NTP, GAC, MA, COM, SEC, BD, STAT, ENG, EVE, TB, MAR, ML, CON, LIVE])
         tensor = tensor.toString()
@@ -63,7 +64,6 @@ function CareerForm() {
                     // setPrediction(res.data)
                     console.log(res.data)
                     let roleArr = res.data.Roles
-                    setPrediction("")
                     for (const roles of roleArr) {
                         yourRole += roles + " ";
                     }
@@ -75,7 +75,6 @@ function CareerForm() {
         }
 
     }
-
     return (
         <>
             <form onSubmit={handleSubmit} className="form-main" method="POSt">
@@ -259,8 +258,8 @@ function CareerForm() {
                     </div>
 
                 </div>
-                <div className="form-button"><button className="form-submit" type="submit"><b>Submit</b></button></div>
-            <div className="role">{prediction}</div>
+                <div className="role">{prediction}</div>
+                <div className="form-button"><button className="form-submit submitbtn" type="submit"><b>Submit</b></button></div>
             </form>
         </>
     )

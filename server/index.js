@@ -2,18 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const connection = require("./database");
-const userRoutes = require("./routes/users");
-const authRoutes = require("./routes/auth");
 const { spawn } = require('child_process');
-const { ok } = require("assert");
 // const getAIMLResult = require("./test")
 //const { tensor } = require("@tensorflow/tfjs");
 
-
-
-//  calling database connection
-connection();
 
 // middlewares
 app.use(express.json());
@@ -88,9 +80,6 @@ app.get("/CareerForm", cors(), (req, res) => {
 
 
 // routes to database and  collection(tables) 
-app.use("/hacky/users", userRoutes);
-app.use("/hacky/auth", authRoutes);
-
 
 const port = process.env.PORT || 4000;
 app.listen(4000, () => console.log(`server is  on ${port}`))
