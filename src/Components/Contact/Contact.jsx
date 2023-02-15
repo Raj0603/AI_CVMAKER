@@ -2,6 +2,7 @@ import Navbar from "../Navbar/Navbar"
 import "./Contact.css" ;
 import emailjs from "emailjs-com" ;
 
+
 function Contact() {
 
     function sendEMail(e) {
